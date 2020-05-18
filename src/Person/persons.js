@@ -1,7 +1,8 @@
-import { React } from "react";
+import React, { Component } from "react";
 
-const person = () => {
-  return <p>This is person component</p>;
-};
-
-export default PersonComponent;
+class Persons extends Component {
+  render() {
+    return <p>This is person component</p>;
+  }
+}
+export default Persons;
