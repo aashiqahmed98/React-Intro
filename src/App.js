@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import person from "./Person/persons";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="p1">
+        <h1>Aashiq Ahmed</h1>
+        <p>Age:21</p>
+
+        <person />
+      </div>
+      // <h1>Hi</h1> => We cannot use like this,as all the tags should be wrapped inside one root element
+      // React.createElement('div',{className:'p1'},React.createElement('h1',null,'This is using createElement()'))
+    );
+  }
 }
-
 export default App;
+// default export is the convention if you want to export only one object(variable, function, class) from the file(module). There could be only one default export per file, but not restricted to only one export.
