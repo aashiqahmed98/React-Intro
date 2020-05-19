@@ -4,12 +4,38 @@ import "./App.css";
 import PersonComponent from "./Person/persons";
 
 class App extends Component {
+  // We can use state={} function only inside the class extened with Component
+  state = {
+    persons: [
+      {
+        name: "AashiqAhmed",
+        age: 12,
+      },
+    ],
+  };
+  switchEventHandler = () => {
+    console.log("I clicked!");
+    
+    // DONT DO THIS=>this.state.persons[0].name='Allah';
+    this.setState({
+      persons: [{ name: "Aadhil Ahmed" }],
+    });
+  };
+
   render() {
     return (
-      <div className="p1">
-        <h1>Aashiq Ahmed</h1>
-        <p>Age:21</p>
-        <PersonComponent/>
+      <div className="">
+        {/* <h1>Aashiq Ahmed</h1>
+        <p>Age:21</p> */}
+
+        <button onClick={this.switchEventHandler}>Switch</button>
+        <PersonComponent name="Aashiq">
+          This is a children content
+        </PersonComponent>
+
+        <PersonComponent name={this.state.persons[0].name} />
+
+        <PersonComponent />
       </div>
       // <h1>Hi</h1> => We cannot use like this,as all the tags should be wrapped inside one root element
       // React.createElement('div',{className:'p1'},React.createElement('h1',null,'This is using createElement()'))
