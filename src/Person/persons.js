@@ -5,12 +5,14 @@ class Persons extends Component {
     return (
       <div>
         <p onClick={this.props.click}>
-          This is person {this.props.name} with a random number
+          This is person {this.props.name} with a random number {""}
           {Math.floor(Math.random() * 30)}
-          {/* <input type="text" onChange={this.props.changed} /> */}
         </p>
-
         <p>{this.props.children}</p>
+
+
+        {/* Two way binding */}
+        {/* <input type="text" onChange={this.props.changed} /> */}
       </div>
 
       //  Props are immutable and state is mutable

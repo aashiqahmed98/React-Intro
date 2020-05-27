@@ -13,9 +13,6 @@ class App extends Component {
       {
         name: "Maxy",
       },
-      {
-        name: "",
-      },
     ],
   };
   switchEventHandler = (newName) => {
@@ -24,11 +21,7 @@ class App extends Component {
     // DONT DO THIS=>this.state.persons[0].name='Allah';
 
     this.setState({
-      persons: [
-        { name: "Aadhil Ahmed" },
-        { name: newName },
-        { name: "Abdulah" },
-      ],
+      persons: [{ name: newName }, { name: "Maxy" }],
     });
   };
 
@@ -38,24 +31,32 @@ class App extends Component {
         {/* <h1>Aashiq Ahmed</h1>
         <p>Age:21</p> */}
 
-        <button onClick={this.switchEventHandler}>Switch</button>
+        <button onClick={this.switchEventHandler.bind(this, "Iqbal")}>
+          Switch
+        </button>
 
-        <PersonComponent name="Aashiq">
-          This is a children content
-        </PersonComponent>
+        {/* 'Aashiq' is passes as props */}
+        <PersonComponent name="Aashiq" />
 
+        <hr></hr>
+
+        {/* Using onclick event handler */}
         <PersonComponent
           name={this.state.persons[0].name}
-          click={this.switchEventHandler}
-        />
+          click={this.switchEventHandler.bind(this, "Mohamed")}
+        >
+          Click above to see the change
+        </PersonComponent>
 
-        {/* TO change the value of state using bind */}
+        <hr></hr>
+
+        {/* To change the value of state using bind */}
 
         <PersonComponent
-          click={this.switchEventHandler.bind(this, "Zubair Ahmed")}
-          name={this.state.persons[2].name}
+          // click={this.switchEventHandler.bind(this, "Zubair Ahmed")}
+          name={this.state.persons[1].name}
         >
-          Click above me to see the change
+         
         </PersonComponent>
       </div>
       // <h1>Hi</h1> => We cannot use like this,as all the tags should be wrapped inside one root element
