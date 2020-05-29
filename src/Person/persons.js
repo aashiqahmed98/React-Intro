@@ -10,9 +10,9 @@ class Persons extends Component {
         </p>
         <p>{this.props.children}</p>
 
-
         {/* Two way binding */}
-        {/* <input type="text" onChange={this.props.changed} /> */}
+
+        <input type="text" onChange={this.props.changed} />
       </div>
 
       //  Props are immutable and state is mutable

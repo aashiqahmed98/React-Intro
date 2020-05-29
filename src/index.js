@@ -1,3 +1,5 @@
+// This is the entry point of the React-app
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
