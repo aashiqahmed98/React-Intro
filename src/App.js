@@ -17,7 +17,7 @@ class App extends Component {
     ],
   };
   switchEventHandler = (newName) => {
-    console.log("I clicked!");
+   
 
     // DONT DO THIS=>this.state.persons[0].name='Allah';
 
