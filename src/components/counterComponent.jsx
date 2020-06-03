@@ -2,20 +2,21 @@
 
 // import React from 'react'; //used the shortcut from 'Simple React Snippet'=> imr
 
+//used the shortcut from 'Simple React Snippet'=> cc
 import React, { Component } from "react"; //used the shortcut from 'Simple React Snippet' =>imrc
 class Counter extends Component {
-  //used the shortcut from 'Simple React Snippet'=> cc
   state = {
     count: 0,
-    tags: [],
+    tags: ["tag1"],
   };
 
+  
   constructor() {
     super(); //Using super() to get the class properties
 
     // console.log("This is a constructor",this);
 
-    this.handleIncrement = this.handleIncrement.bind(this);
+    // this.handleIncrement = this.handleIncrement.bind(this);
   }
   //Used to use styles as JS  object in HTML tags
   styles = {
@@ -44,9 +45,13 @@ class Counter extends Component {
   //   console.log('Clicked!',this)
   // }
 
-  handleIncrement() {
-    console.log("Clicked!", this);
-  }
+  handleIncrement = () => {
+    // console.log("Clicked!", this);
+
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
 
   render() {
     return (
@@ -67,7 +72,9 @@ class Counter extends Component {
         <ul>
           {this.state.tags.length === 0 && "No tags"}{" "}
           {/*True && 'Strig' returns true */}
-          {this.renderTags()}
+        
+          {/* {this.renderTags()} */}
+       
         </ul>
       </React.Fragment>
     );
