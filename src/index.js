@@ -3,17 +3,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import App from "./App";
+
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 
 // Components
+
+// import App from "./App";
+// import Counters from "./components/counters";
 // import Counter from './components/counterComponent';
-import Counters from './components/counters';
+import App1 from "./App1";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counters />
+    <App1 />
   </React.StrictMode>,
   document.getElementById("root")
 );
